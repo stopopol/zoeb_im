@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Zöbelboden Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <script src="lib/jquery/jquery-3.3.1.min.js"> //v3.3.1</script>
+  <script src="lib/popper/popper.js"> //v1.14.3</script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"> // v4.1.0 </script> 
+  <script type="text/javascript" src="js/setup.js"> // basic setup functions</script>
+  
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <h2>Zöbelboden Data Pit</h2>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link" href="#" id="home_button">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="http://geodaten01.umweltbundesamt.at/geoserver/web/">GeoServer</a>
+		  </li>
+		  <li class="nav-item dropdown">
+			<a class="nav-link" href="#" id="db_tables_button">Show database tables</a>
+		  </li>
+		  <li class="nav-item">
+			
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+			  Admin
+			</button>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+
+
+	<div class="jumbotron text-center">
+	  <h1>Welcome to the Zöbelboden Data Pit</h1>
+	  <p>This is a testing and development instance for managing data</p> 
+	</div>
+
+	<div class="container" id="content_container"></div>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Admin area</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			  <div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			  </div>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">Login</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+</body>
+</html>
