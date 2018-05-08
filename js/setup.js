@@ -4,7 +4,7 @@
  * loads layers
  *
  */
-
+ 
 function load_db_tables() {
 
 	$.ajax({
@@ -14,10 +14,10 @@ function load_db_tables() {
 
 			var json_response = JSON.parse(response);
 			document.getElementById("content_container").innerHTML = "<h3>Current tables in database</h3>";
-			for(var i = 0; i < json_response.length; i++) {
+			for (var i = 0; i < json_response.length; i++) {
 				var obj = json_response[i];
 				console.log(obj);
-				document.getElementById("content_container").innerHTML +=('<a class="dropdown-item" href="#">' + obj + '</a>');
+				document.getElementById("content_container").innerHTML +=('<a class="dropdown-item" href="#" id=' + obj + ' >' + obj + '</a>');
 			}
 			
 		},
@@ -31,10 +31,35 @@ function load_db_tables() {
 
 }
 
+function check_ro_status() {
+
+	$.ajax({
+		type: "POST",
+		url: 'php/db_checkRO.php',
+		success: function(response) {
+
+			var json_response = JSON.parse(response);
+			document.getElementById("content_container").innerHTML = "<h3>Raumobjekte Status Report</h3>";
+			for (var i = 0; i < json_response.length; i++) {
+				var obj = json_response[i];
+				document.getElementById("content_container").innerHTML +=('<p>' + obj + '</p>');
+			}
+	
+		},
+		error: function(xhr, status, error) {
+			console.log(xhr);
+			console.log(status);
+			console.log(error);
+		}
+	}) 
+
+}
+
 $(document).ready(function() {
 	print_home();
 	document.getElementById("home_button").addEventListener("click", print_home);
 	document.getElementById("db_tables_button").addEventListener("click", load_db_tables);
+	document.getElementById("db_raumobjekte_button").addEventListener("click", check_ro_status);
 });
 
 function print_home() {
@@ -57,3 +82,5 @@ function print_home() {
 	  </div>
     `;
 }
+
+

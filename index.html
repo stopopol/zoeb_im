@@ -9,10 +9,10 @@
   <script src="lib/popper/popper.js"> //v1.14.3</script>
   <script src="lib/bootstrap/js/bootstrap.min.js"> // v4.1.0 </script> 
   <script type="text/javascript" src="js/setup.js"> // basic setup functions</script>
-  
+  <link rel="stylesheet" href="css/zoebelboden.css">
 </head>
-<body>
 
+<body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <h2>Zöbelboden Data Pit</h2>
@@ -30,11 +30,11 @@
 		  <li class="nav-item dropdown">
 			<a class="nav-link" href="#" id="db_tables_button">Show database tables</a>
 		  </li>
+		  <li class="nav-item dropdown">
+			<a class="nav-link" href="#" id="db_raumobjekte_button">Status RO</a>
+		  </li>
 		  <li class="nav-item">
-			
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-			  Admin
-			</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Admin</button>
 		  </li>
 		</ul>
 	  </div>
@@ -43,11 +43,10 @@
 
 	<div class="jumbotron text-center">
 	  <h1>Welcome to the Zöbelboden Data Pit</h1>
-	  <p>This is a testing and development instance for managing data</p> 
+	  <p>This is a testing and development instance for managing geospatial data</p> 
 	</div>
 
 	<div class="container" id="content_container"></div>
-
 
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -72,6 +71,22 @@
 		</div>
 	  </div>
 	</div>
+	
+	<div class="css_loader" id="css_loader_object">
+		<div class="cssload-container">
+			<span class="cssload-dots"></span>
+			<span class="cssload-dots"></span>
+			<span class="cssload-dots"></span>
+			<span class="cssload-dots"></span>
+			<span class="cssload-dots"></span>
+			<span class="cssload-dots"></span>
+			<span class="cssload-dots"></span>
+			<span class="cssload-dots"></span>
+			<span class="cssload-dots"></span>
+			<span class="cssload-dots"></span>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/listeners.js"></script>
 	
 </body>
 </html>
