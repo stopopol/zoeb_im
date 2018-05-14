@@ -39,11 +39,8 @@ function check_ro_status() {
 		success: function(response) {
 
 			var json_response = JSON.parse(response);
-			document.getElementById("content_container").innerHTML = "<h3>Raumobjekte Status Report</h3>";
-			for (var i = 0; i < json_response.length; i++) {
-				var obj = json_response[i];
-				document.getElementById("content_container").innerHTML +=('<p>' + obj + '</p>');
-			}
+			var str = JSON.stringify(json_response, null, 2);
+			document.getElementById("content_container").innerHTML = "<h3>Raumobjekte Status Report</h3><p>" + str + "</p>";
 	
 		},
 		error: function(xhr, status, error) {
@@ -82,5 +79,3 @@ function print_home() {
 	  </div>
     `;
 }
-
-
