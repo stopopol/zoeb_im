@@ -36,6 +36,8 @@ if ($duplicates_count > 0) {
 }
 
 
+// !!! Maybe I should change the order an iterate through the layers and check for the RO in the main table
+
 // search for ROs in layers
 // get list of all layers
 $layers_results = pg_query($conn, "SELECT table_name FROM information_schema.tables WHERE table_schema='public' ORDER BY table_schema,table_name;");
