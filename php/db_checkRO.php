@@ -46,21 +46,23 @@ while ($row = pg_fetch_row($layers_results)) {
 
 $test = [];
 // loop through ROs
+$i = 1;
 foreach ($query_results as $raumobjekt) {
 	foreach ($layer_names as $layer ) {
 		if ($layer == "aaRaObj_Master" || $layer == "tst" || $layer == "us_gaz" || $layer == "us_lex" || $layer == "us_rules" || $layer == "spatial_ref_sys" || $layer == "stationcodes_nfnbtrees_combined" || $layer == "stationcodes_nfnbtrees" || $layer == "stationcodes_boundingboxes_polygon" || $layer == "stationcodes_boundingboxes" || $layer == "raster_overviews" || $layer == "raster_columns") {
 			continue;
 		}
 		
-		$query_string = 'SELECT "Akronym" FROM "' . $layer . '"' . " WHERE " . '"Akronym" = ' . "'" . $raumobjekt . "'";
-		//$RO_is_in_layer = pg_query($conn, $query_string);
-		
-		//array_push($report_summary, $layer);
+		if ($layer == "im_baeche") {
+			$query_string = 'SELECT "Akronym" FROM "' . $layer . '"' . " WHERE " . '"Akronym" = ' . "'" . $raumobjekt . "'";
+			array_push($test, $query_string);
+			$RO_is_in_layer = pg_query($conn, $query_string);
+		}		
 		
 	}
 } 
 
-//echo json_encode($query_string);
+//echo json_encode($test);
 echo json_encode($report_summary);
 
 pg_close($dbconn); 
