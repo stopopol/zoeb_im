@@ -62,13 +62,18 @@ while ($row = pg_fetch_row($ROs_results)) {
   array_push($list_ros_layers,$row[0]);
 }
 
+array_push($report_summary, "Following ROs are not in any layer: ");
+
+$redundant_ro_list = [];
 // iterate through all ROs
 foreach ($query_results as $ro ) {
 	if (!in_array($ro, $list_ros_layers)) {
-		$RO_redundant_message = "Following RO is not in any layer: " . $ro;
-		array_push($report_summary, $RO_redundant_message);
+		//$RO_redundant_message = "Following RO is not in any layer: " . $ro;
+		array_push($redundant_ro_list,$ro);
 	}
 }
+
+array_push($report_summary, $redundant_ro_list);
 
 echo json_encode($report_summary);
 
