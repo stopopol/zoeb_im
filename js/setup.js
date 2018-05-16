@@ -56,7 +56,9 @@ function check_ro_status() {
 			else {
 				document.getElementById("content_container").innerHTML += "<p style='color:green;'>Looks good. No issues were found :)</p>";
 			}
-			document.getElementById("content_container").innerHTML += `
+			document.getElementById("content_container").innerHTML += '<table class="table"> <thead><tr> <th scope="col"></th> <th scope="col">Issue count</th> <th scope="col">"Akronym" of each RO</th></tr> </thead> <tbody><tr> <th scope="row">Duplicates in the main table</th> <td>' + number_of_duplicates + '</td> <td>' + JSON.stringify(list_of_duplicates, null, 2) + '</td></tr><tr> <th scope="row">List of ROs that are not in any layer, but in the main table</th> <td>'+ number_ros_not_in_layers +'</td> <td>'+ JSON.stringify(ros_not_in_layers, null, 2) + '</td></tr><tr> <th scope="row">List of ROs that are not in the main table, but were found in a layer</th> <td>'+ number_ros_not_in_main_table + '</td> <td>'+ JSON.stringify(ros_not_in_main_table, null, 2) +'</td></tr> </tbody></table>';
+				/*
+				document.getElementById("content_container").innerHTML += '
 				<table class="table">
 				  <thead>
 					<tr>
@@ -68,22 +70,23 @@ function check_ro_status() {
 				  <tbody>
 					<tr>
 					  <th scope="row">Duplicates in the main table</th>
-					  <td>` + number_of_duplicates + `</td>
-					  <td>` + JSON.stringify(list_of_duplicates, null, 2) + `</td>
+					  <td>' + number_of_duplicates + '</td>
+					  <td>' + JSON.stringify(list_of_duplicates, null, 2) + '</td>
 					</tr>
 					<tr>
 					  <th scope="row">List of ROs that are not in any layer, but in the main table</th>
-					  <td>`+ number_ros_not_in_layers +`</td>
-					  <td>`+ JSON.stringify(ros_not_in_layers, null, 2) + `</td>
+					  <td>'+ number_ros_not_in_layers +'</td>
+					  <td>'+ JSON.stringify(ros_not_in_layers, null, 2) + '</td>
 					</tr>
 					<tr>
 					  <th scope="row">List of ROs that are not in the main table, but were found in a layer</th>
-					  <td>`+ number_ros_not_in_main_table + `</td>
-					  <td>`+ JSON.stringify(ros_not_in_main_table, null, 2) +`</td>
+					  <td>'+ number_ros_not_in_main_table + '</td>
+					  <td>'+ JSON.stringify(ros_not_in_main_table, null, 2) +'</td>
 					</tr>
 				  </tbody>
 				</table>
-				`;
+				';
+				*/
 
 		},
 		error: function(xhr, status, error) {
@@ -95,15 +98,12 @@ function check_ro_status() {
 
 }
 
-$(document).ready(function() {
-	print_home();
-	document.getElementById("home_button").addEventListener("click", print_home);
-	document.getElementById("db_tables_button").addEventListener("click", load_db_tables);
-	document.getElementById("db_raumobjekte_button").addEventListener("click", check_ro_status);
-});
-
-function print_home() {
-  document.getElementById("content_container").innerHTML = `
+/*
+	`
+	<div class="jumbotron text-center">
+	  <h1>Welcome to the Zöbelboden Data Pit</h1>
+	  <p>This is a testing and development instance for managing geospatial data</p> 
+	</div>
 	<div class='row'>
 		<div class='col-sm-4'>
 		  <h3>Postgres and PostGIS</h3>
@@ -111,7 +111,6 @@ function print_home() {
 		</div>
 		<div class='col-sm-4'>
 		  <h3>GeoServer</h3>
-		  <p><a href='http://geodaten01.umweltbundesamt.at/geoserver/web/'>GeoServer location</a></p>
 		  <p>Data can be exported in different formats using GeoServer</p>
 		</div>
 		<div class='col-sm-4'>
@@ -121,4 +120,17 @@ function print_home() {
 		</div>
 	  </div>
     `;
+*/
+
+
+function print_home() {
+	document.getElementById("content_container").innerHTML = '<div class="jumbotron text-center"> <h1>Welcome to the Zöbelboden Data Pit</h1> <p>This is a testing and development instance for managing geospatial data</p> </div><div class="row"><div class="col-sm-4"> <h3>Postgres and PostGIS</h3> <p>This webservice provides access to the Zöbelboden database</p></div><div class="col-sm-4"> <h3>GeoServer</h3> <p>Data can be exported in different formats using GeoServer</p></div><div class="col-sm-4"> <h3>About</h3> <p>UI to access and manage Zöbelboden Data</p> <p>Layers can be edited using QGIS and pgAdmin</p></div> </div>';
 }
+
+$(document).ready(function() {
+	print_home();
+	
+	document.getElementById("home_button").addEventListener("click", print_home);
+	document.getElementById("db_tables_button").addEventListener("click", load_db_tables);
+	document.getElementById("db_raumobjekte_button").addEventListener("click", check_ro_status);
+});
