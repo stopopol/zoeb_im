@@ -39,8 +39,43 @@ function check_ro_status() {
 		success: function(response) {
 
 			var json_response = JSON.parse(response);
-			var str = JSON.stringify(json_response, null, 2);
-			document.getElementById("content_container").innerHTML = "<h3>Raumobjekte Status Report</h3><p>" + str + "</p>";
+		
+			var number_of_duplicates = json_response["number_duplicates"];
+			var list_of_duplicates = json_response["list_duplicates"];
+			var ros_not_in_layers = json_response["ros_not_in_layers"];
+			var ros_not_in_main_table = json_response["ros_not_in_main_table"];
+			
+			document.getElementById("content_container").innerHTML = "<h3>Status Report - Raumobjekte</h3><p>";
+			document.getElementById("content_container").innerHTML += `
+				<table class="table">
+				  <thead>
+					<tr>
+					  <th scope="col"></th>
+					  <th scope="col">Count</th>
+					  <th scope="col">ROs</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <th scope="row">Duplicates in the main table</th>
+					  <td>` + number_of_duplicates + `</td>
+					  <td>` + JSON.stringify(list_of_duplicates, null, 2) + `</td>
+					</tr>
+					<tr>
+					  <th scope="row">List of ROs that are not in any layer, but in the main table</th>
+					  <td>`+ Object.keys(ros_not_in_layers).length +`</td>
+					  <td>`+ JSON.stringify(ros_not_in_layers, null, 2) + `</td>
+					</tr>
+					<tr>
+					  <th scope="row">List of ROs that are not in the main table, but were found in a layer</th>
+					  <td>`+ Object.keys(ros_not_in_main_table).length + `</td>
+					  <td>`+ JSON.stringify(ros_not_in_main_table, null, 2) +`</td>
+					</tr>
+				  </tbody>
+				</table>
+				`;
+				
+				
 	
 		},
 		error: function(xhr, status, error) {
