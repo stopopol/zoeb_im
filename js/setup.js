@@ -45,7 +45,17 @@ function check_ro_status() {
 			var ros_not_in_layers = json_response["ros_not_in_layers"];
 			var ros_not_in_main_table = json_response["ros_not_in_main_table"];
 			
+			var number_ros_not_in_layers = Object.keys(ros_not_in_layers).length;
+			var number_ros_not_in_main_table = Object.keys(ros_not_in_main_table).length;
+			var total_issues = number_of_duplicates + number_ros_not_in_layers  + number_ros_not_in_main_table;
+			
 			document.getElementById("content_container").innerHTML = "<h3>Status Report - Raumobjekte</h3><p>";
+			if (total_issues > 0) {
+				document.getElementById("content_container").innerHTML += "<p style='color:red;'>Oh no there's a total of " + total_issues + " issues :(</p>";
+			}
+			else {
+				document.getElementById("content_container").innerHTML += "<p style='color:green;'>Looks good. No issues were found :)</p>";
+			}
 			document.getElementById("content_container").innerHTML += `
 				<table class="table">
 				  <thead>
@@ -63,12 +73,12 @@ function check_ro_status() {
 					</tr>
 					<tr>
 					  <th scope="row">List of ROs that are not in any layer, but in the main table</th>
-					  <td>`+ Object.keys(ros_not_in_layers).length +`</td>
+					  <td>`+ number_ros_not_in_layers +`</td>
 					  <td>`+ JSON.stringify(ros_not_in_layers, null, 2) + `</td>
 					</tr>
 					<tr>
 					  <th scope="row">List of ROs that are not in the main table, but were found in a layer</th>
-					  <td>`+ Object.keys(ros_not_in_main_table).length + `</td>
+					  <td>`+ number_ros_not_in_main_table + `</td>
 					  <td>`+ JSON.stringify(ros_not_in_main_table, null, 2) +`</td>
 					</tr>
 				  </tbody>
