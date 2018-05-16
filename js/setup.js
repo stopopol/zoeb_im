@@ -49,9 +49,9 @@ function check_ro_status() {
 			var number_ros_not_in_main_table = Object.keys(ros_not_in_main_table).length;
 			var total_issues = number_of_duplicates + number_ros_not_in_layers  + number_ros_not_in_main_table;
 			
-			document.getElementById("content_container").innerHTML = "<h3>Status Report - Raumobjekte</h3><p>";
+			document.getElementById("content_container").innerHTML = "<h3>Status Report - Raumobjekte</h3><small class='text-muted'>This report is automatically generated based on all tables containing an 'Akronym' column</small>";
 			if (total_issues > 0) {
-				document.getElementById("content_container").innerHTML += "<p style='color:red;'>Oh no there's a total of " + total_issues + " issues :(</p>";
+				document.getElementById("content_container").innerHTML += "<br><br><p style='color:red;'>Oh no! There's a total of " + total_issues + " issues :(</p>";
 			}
 			else {
 				document.getElementById("content_container").innerHTML += "<p style='color:green;'>Looks good. No issues were found :)</p>";
@@ -61,8 +61,8 @@ function check_ro_status() {
 				  <thead>
 					<tr>
 					  <th scope="col"></th>
-					  <th scope="col">Count</th>
-					  <th scope="col">ROs</th>
+					  <th scope="col">Issue count</th>
+					  <th scope="col">"Akronym" of each RO</th>
 					</tr>
 				  </thead>
 				  <tbody>
@@ -84,9 +84,7 @@ function check_ro_status() {
 				  </tbody>
 				</table>
 				`;
-				
-				
-	
+
 		},
 		error: function(xhr, status, error) {
 			console.log(xhr);
