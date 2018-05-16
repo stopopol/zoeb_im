@@ -1,10 +1,9 @@
-
-
 #css_loader_object {
 	position:fixed;
     top: 50%;
     left: 50%;
-	
+	margin-right: -50%;
+    transform: translate(-50%, -50%);
     -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 1s; /* Firefox < 16 */
         -ms-animation: fadein 1s; /* Internet Explorer */
@@ -43,7 +42,7 @@
 
 .cssload-wrap {
 	text-align: center;
-	line-height: 195px;
+	line-height: 475px;
 }
 	
 .cssload-container {
@@ -55,13 +54,13 @@
 	position: relative;
 }
 .cssload-dots:not(:last-child) {
-	margin-right: 9px;
+	margin-right: 21px;
 }
 .cssload-dots:before, .cssload-dots:after {
 	content: "";
 	display: inline-block;
-	width: 6px;
-	height: 6px;
+	width: 14px;
+	height: 14px;
 	border-radius: 50%;
 	position: absolute;
 }
@@ -71,17 +70,17 @@
 		-ms-transform: translateY(-200%);
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);
-	animation: cssload-animBefore 1.15s linear infinite;
-		-o-animation: cssload-animBefore 1.15s linear infinite;
-		-ms-animation: cssload-animBefore 1.15s linear infinite;
-		-webkit-animation: cssload-animBefore 1.15s linear infinite;
-		-moz-animation: cssload-animBefore 1.15s linear infinite;
-	animation-delay: -1.04s;
-		-o-animation-delay: -1.04s;
-		-ms-animation-delay: -1.04s;
-		-webkit-animation-delay: -1.04s;
-		-moz-animation-delay: -1.04s;
-	background-color: rgb(255,0,0);
+	animation: cssload-animBefore 1.9s linear infinite;
+		-o-animation: cssload-animBefore 1.9s linear infinite;
+		-ms-animation: cssload-animBefore 1.9s linear infinite;
+		-webkit-animation: cssload-animBefore 1.9s linear infinite;
+		-moz-animation: cssload-animBefore 1.9s linear infinite;
+	animation-delay: -1.71s;
+		-o-animation-delay: -1.71s;
+		-ms-animation-delay: -1.71s;
+		-webkit-animation-delay: -1.71s;
+		-moz-animation-delay: -1.71s;
+	background-color: rgb(0,102,0);
 }
 .cssload-dots:nth-child(1):after {
 	transform: translateY(200%);
@@ -89,16 +88,16 @@
 		-ms-transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
-	animation: cssload-animAfter 1.15s linear infinite;
-		-o-animation: cssload-animAfter 1.15s linear infinite;
-		-ms-animation: cssload-animAfter 1.15s linear infinite;
-		-webkit-animation: cssload-animAfter 1.15s linear infinite;
-		-moz-animation: cssload-animAfter 1.15s linear infinite;
-	animation-delay: -1.04s;
-		-o-animation-delay: -1.04s;
-		-ms-animation-delay: -1.04s;
-		-webkit-animation-delay: -1.04s;
-		-moz-animation-delay: -1.04s;
+	animation: cssload-animAfter 1.9s linear infinite;
+		-o-animation: cssload-animAfter 1.9s linear infinite;
+		-ms-animation: cssload-animAfter 1.9s linear infinite;
+		-webkit-animation: cssload-animAfter 1.9s linear infinite;
+		-moz-animation: cssload-animAfter 1.9s linear infinite;
+	animation-delay: -1.71s;
+		-o-animation-delay: -1.71s;
+		-ms-animation-delay: -1.71s;
+		-webkit-animation-delay: -1.71s;
+		-moz-animation-delay: -1.71s;
 	background-color: rgb(119,119,119);
 }
 .cssload-dots:nth-child(2):before {
@@ -107,17 +106,17 @@
 		-ms-transform: translateY(-200%);
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);
-	animation: cssload-animBefore 1.15s linear infinite;
-		-o-animation: cssload-animBefore 1.15s linear infinite;
-		-ms-animation: cssload-animBefore 1.15s linear infinite;
-		-webkit-animation: cssload-animBefore 1.15s linear infinite;
-		-moz-animation: cssload-animBefore 1.15s linear infinite;
-	animation-delay: -2.07s;
-		-o-animation-delay: -2.07s;
-		-ms-animation-delay: -2.07s;
-		-webkit-animation-delay: -2.07s;
-		-moz-animation-delay: -2.07s;
-	background-color: rgb(255,0,0);
+	animation: cssload-animBefore 1.9s linear infinite;
+		-o-animation: cssload-animBefore 1.9s linear infinite;
+		-ms-animation: cssload-animBefore 1.9s linear infinite;
+		-webkit-animation: cssload-animBefore 1.9s linear infinite;
+		-moz-animation: cssload-animBefore 1.9s linear infinite;
+	animation-delay: -3.42s;
+		-o-animation-delay: -3.42s;
+		-ms-animation-delay: -3.42s;
+		-webkit-animation-delay: -3.42s;
+		-moz-animation-delay: -3.42s;
+	background-color: rgb(0,102,0);
 }
 .cssload-dots:nth-child(2):after {
 	transform: translateY(200%);
@@ -125,16 +124,16 @@
 		-ms-transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
-	animation: cssload-animAfter 1.15s linear infinite;
-		-o-animation: cssload-animAfter 1.15s linear infinite;
-		-ms-animation: cssload-animAfter 1.15s linear infinite;
-		-webkit-animation: cssload-animAfter 1.15s linear infinite;
-		-moz-animation: cssload-animAfter 1.15s linear infinite;
-	animation-delay: -2.07s;
-		-o-animation-delay: -2.07s;
-		-ms-animation-delay: -2.07s;
-		-webkit-animation-delay: -2.07s;
-		-moz-animation-delay: -2.07s;
+	animation: cssload-animAfter 1.9s linear infinite;
+		-o-animation: cssload-animAfter 1.9s linear infinite;
+		-ms-animation: cssload-animAfter 1.9s linear infinite;
+		-webkit-animation: cssload-animAfter 1.9s linear infinite;
+		-moz-animation: cssload-animAfter 1.9s linear infinite;
+	animation-delay: -3.42s;
+		-o-animation-delay: -3.42s;
+		-ms-animation-delay: -3.42s;
+		-webkit-animation-delay: -3.42s;
+		-moz-animation-delay: -3.42s;
 	background-color: rgb(119,119,119);
 }
 .cssload-dots:nth-child(3):before {
@@ -143,17 +142,17 @@
 		-ms-transform: translateY(-200%);
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);
-	animation: cssload-animBefore 1.15s linear infinite;
-		-o-animation: cssload-animBefore 1.15s linear infinite;
-		-ms-animation: cssload-animBefore 1.15s linear infinite;
-		-webkit-animation: cssload-animBefore 1.15s linear infinite;
-		-moz-animation: cssload-animBefore 1.15s linear infinite;
-	animation-delay: -3.11s;
-		-o-animation-delay: -3.11s;
-		-ms-animation-delay: -3.11s;
-		-webkit-animation-delay: -3.11s;
-		-moz-animation-delay: -3.11s;
-	background-color: rgb(255,0,0);
+	animation: cssload-animBefore 1.9s linear infinite;
+		-o-animation: cssload-animBefore 1.9s linear infinite;
+		-ms-animation: cssload-animBefore 1.9s linear infinite;
+		-webkit-animation: cssload-animBefore 1.9s linear infinite;
+		-moz-animation: cssload-animBefore 1.9s linear infinite;
+	animation-delay: -5.13s;
+		-o-animation-delay: -5.13s;
+		-ms-animation-delay: -5.13s;
+		-webkit-animation-delay: -5.13s;
+		-moz-animation-delay: -5.13s;
+	background-color: rgb(0,102,0);
 }
 .cssload-dots:nth-child(3):after {
 	transform: translateY(200%);
@@ -161,16 +160,16 @@
 		-ms-transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
-	animation: cssload-animAfter 1.15s linear infinite;
-		-o-animation: cssload-animAfter 1.15s linear infinite;
-		-ms-animation: cssload-animAfter 1.15s linear infinite;
-		-webkit-animation: cssload-animAfter 1.15s linear infinite;
-		-moz-animation: cssload-animAfter 1.15s linear infinite;
-	animation-delay: -3.11s;
-		-o-animation-delay: -3.11s;
-		-ms-animation-delay: -3.11s;
-		-webkit-animation-delay: -3.11s;
-		-moz-animation-delay: -3.11s;
+	animation: cssload-animAfter 1.9s linear infinite;
+		-o-animation: cssload-animAfter 1.9s linear infinite;
+		-ms-animation: cssload-animAfter 1.9s linear infinite;
+		-webkit-animation: cssload-animAfter 1.9s linear infinite;
+		-moz-animation: cssload-animAfter 1.9s linear infinite;
+	animation-delay: -5.13s;
+		-o-animation-delay: -5.13s;
+		-ms-animation-delay: -5.13s;
+		-webkit-animation-delay: -5.13s;
+		-moz-animation-delay: -5.13s;
 	background-color: rgb(119,119,119);
 }
 .cssload-dots:nth-child(4):before {
@@ -179,17 +178,17 @@
 		-ms-transform: translateY(-200%);
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);
-	animation: cssload-animBefore 1.15s linear infinite;
-		-o-animation: cssload-animBefore 1.15s linear infinite;
-		-ms-animation: cssload-animBefore 1.15s linear infinite;
-		-webkit-animation: cssload-animBefore 1.15s linear infinite;
-		-moz-animation: cssload-animBefore 1.15s linear infinite;
-	animation-delay: -4.14s;
-		-o-animation-delay: -4.14s;
-		-ms-animation-delay: -4.14s;
-		-webkit-animation-delay: -4.14s;
-		-moz-animation-delay: -4.14s;
-	background-color: rgb(255,0,0);
+	animation: cssload-animBefore 1.9s linear infinite;
+		-o-animation: cssload-animBefore 1.9s linear infinite;
+		-ms-animation: cssload-animBefore 1.9s linear infinite;
+		-webkit-animation: cssload-animBefore 1.9s linear infinite;
+		-moz-animation: cssload-animBefore 1.9s linear infinite;
+	animation-delay: -6.84s;
+		-o-animation-delay: -6.84s;
+		-ms-animation-delay: -6.84s;
+		-webkit-animation-delay: -6.84s;
+		-moz-animation-delay: -6.84s;
+	background-color: rgb(0,102,0);
 }
 .cssload-dots:nth-child(4):after {
 	transform: translateY(200%);
@@ -197,16 +196,16 @@
 		-ms-transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
-	animation: cssload-animAfter 1.15s linear infinite;
-		-o-animation: cssload-animAfter 1.15s linear infinite;
-		-ms-animation: cssload-animAfter 1.15s linear infinite;
-		-webkit-animation: cssload-animAfter 1.15s linear infinite;
-		-moz-animation: cssload-animAfter 1.15s linear infinite;
-	animation-delay: -4.14s;
-		-o-animation-delay: -4.14s;
-		-ms-animation-delay: -4.14s;
-		-webkit-animation-delay: -4.14s;
-		-moz-animation-delay: -4.14s;
+	animation: cssload-animAfter 1.9s linear infinite;
+		-o-animation: cssload-animAfter 1.9s linear infinite;
+		-ms-animation: cssload-animAfter 1.9s linear infinite;
+		-webkit-animation: cssload-animAfter 1.9s linear infinite;
+		-moz-animation: cssload-animAfter 1.9s linear infinite;
+	animation-delay: -6.84s;
+		-o-animation-delay: -6.84s;
+		-ms-animation-delay: -6.84s;
+		-webkit-animation-delay: -6.84s;
+		-moz-animation-delay: -6.84s;
 	background-color: rgb(119,119,119);
 }
 .cssload-dots:nth-child(5):before {
@@ -215,17 +214,17 @@
 		-ms-transform: translateY(-200%);
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);
-	animation: cssload-animBefore 1.15s linear infinite;
-		-o-animation: cssload-animBefore 1.15s linear infinite;
-		-ms-animation: cssload-animBefore 1.15s linear infinite;
-		-webkit-animation: cssload-animBefore 1.15s linear infinite;
-		-moz-animation: cssload-animBefore 1.15s linear infinite;
-	animation-delay: -5.18s;
-		-o-animation-delay: -5.18s;
-		-ms-animation-delay: -5.18s;
-		-webkit-animation-delay: -5.18s;
-		-moz-animation-delay: -5.18s;
-	background-color: rgb(255,0,0);
+	animation: cssload-animBefore 1.9s linear infinite;
+		-o-animation: cssload-animBefore 1.9s linear infinite;
+		-ms-animation: cssload-animBefore 1.9s linear infinite;
+		-webkit-animation: cssload-animBefore 1.9s linear infinite;
+		-moz-animation: cssload-animBefore 1.9s linear infinite;
+	animation-delay: -8.55s;
+		-o-animation-delay: -8.55s;
+		-ms-animation-delay: -8.55s;
+		-webkit-animation-delay: -8.55s;
+		-moz-animation-delay: -8.55s;
+	background-color: rgb(0,102,0);
 }
 .cssload-dots:nth-child(5):after {
 	transform: translateY(200%);
@@ -233,16 +232,16 @@
 		-ms-transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
-	animation: cssload-animAfter 1.15s linear infinite;
-		-o-animation: cssload-animAfter 1.15s linear infinite;
-		-ms-animation: cssload-animAfter 1.15s linear infinite;
-		-webkit-animation: cssload-animAfter 1.15s linear infinite;
-		-moz-animation: cssload-animAfter 1.15s linear infinite;
-	animation-delay: -5.18s;
-		-o-animation-delay: -5.18s;
-		-ms-animation-delay: -5.18s;
-		-webkit-animation-delay: -5.18s;
-		-moz-animation-delay: -5.18s;
+	animation: cssload-animAfter 1.9s linear infinite;
+		-o-animation: cssload-animAfter 1.9s linear infinite;
+		-ms-animation: cssload-animAfter 1.9s linear infinite;
+		-webkit-animation: cssload-animAfter 1.9s linear infinite;
+		-moz-animation: cssload-animAfter 1.9s linear infinite;
+	animation-delay: -8.55s;
+		-o-animation-delay: -8.55s;
+		-ms-animation-delay: -8.55s;
+		-webkit-animation-delay: -8.55s;
+		-moz-animation-delay: -8.55s;
 	background-color: rgb(119,119,119);
 }
 .cssload-dots:nth-child(6):before {
@@ -251,17 +250,17 @@
 		-ms-transform: translateY(-200%);
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);
-	animation: cssload-animBefore 1.15s linear infinite;
-		-o-animation: cssload-animBefore 1.15s linear infinite;
-		-ms-animation: cssload-animBefore 1.15s linear infinite;
-		-webkit-animation: cssload-animBefore 1.15s linear infinite;
-		-moz-animation: cssload-animBefore 1.15s linear infinite;
-	animation-delay: -6.21s;
-		-o-animation-delay: -6.21s;
-		-ms-animation-delay: -6.21s;
-		-webkit-animation-delay: -6.21s;
-		-moz-animation-delay: -6.21s;
-	background-color: rgb(255,0,0);
+	animation: cssload-animBefore 1.9s linear infinite;
+		-o-animation: cssload-animBefore 1.9s linear infinite;
+		-ms-animation: cssload-animBefore 1.9s linear infinite;
+		-webkit-animation: cssload-animBefore 1.9s linear infinite;
+		-moz-animation: cssload-animBefore 1.9s linear infinite;
+	animation-delay: -10.26s;
+		-o-animation-delay: -10.26s;
+		-ms-animation-delay: -10.26s;
+		-webkit-animation-delay: -10.26s;
+		-moz-animation-delay: -10.26s;
+	background-color: rgb(0,102,0);
 }
 .cssload-dots:nth-child(6):after {
 	transform: translateY(200%);
@@ -269,16 +268,16 @@
 		-ms-transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
-	animation: cssload-animAfter 1.15s linear infinite;
-		-o-animation: cssload-animAfter 1.15s linear infinite;
-		-ms-animation: cssload-animAfter 1.15s linear infinite;
-		-webkit-animation: cssload-animAfter 1.15s linear infinite;
-		-moz-animation: cssload-animAfter 1.15s linear infinite;
-	animation-delay: -6.21s;
-		-o-animation-delay: -6.21s;
-		-ms-animation-delay: -6.21s;
-		-webkit-animation-delay: -6.21s;
-		-moz-animation-delay: -6.21s;
+	animation: cssload-animAfter 1.9s linear infinite;
+		-o-animation: cssload-animAfter 1.9s linear infinite;
+		-ms-animation: cssload-animAfter 1.9s linear infinite;
+		-webkit-animation: cssload-animAfter 1.9s linear infinite;
+		-moz-animation: cssload-animAfter 1.9s linear infinite;
+	animation-delay: -10.26s;
+		-o-animation-delay: -10.26s;
+		-ms-animation-delay: -10.26s;
+		-webkit-animation-delay: -10.26s;
+		-moz-animation-delay: -10.26s;
 	background-color: rgb(119,119,119);
 }
 .cssload-dots:nth-child(7):before {
@@ -287,17 +286,17 @@
 		-ms-transform: translateY(-200%);
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);
-	animation: cssload-animBefore 1.15s linear infinite;
-		-o-animation: cssload-animBefore 1.15s linear infinite;
-		-ms-animation: cssload-animBefore 1.15s linear infinite;
-		-webkit-animation: cssload-animBefore 1.15s linear infinite;
-		-moz-animation: cssload-animBefore 1.15s linear infinite;
-	animation-delay: -7.25s;
-		-o-animation-delay: -7.25s;
-		-ms-animation-delay: -7.25s;
-		-webkit-animation-delay: -7.25s;
-		-moz-animation-delay: -7.25s;
-	background-color: rgb(255,0,0);
+	animation: cssload-animBefore 1.9s linear infinite;
+		-o-animation: cssload-animBefore 1.9s linear infinite;
+		-ms-animation: cssload-animBefore 1.9s linear infinite;
+		-webkit-animation: cssload-animBefore 1.9s linear infinite;
+		-moz-animation: cssload-animBefore 1.9s linear infinite;
+	animation-delay: -11.97s;
+		-o-animation-delay: -11.97s;
+		-ms-animation-delay: -11.97s;
+		-webkit-animation-delay: -11.97s;
+		-moz-animation-delay: -11.97s;
+	background-color: rgb(0,102,0);
 }
 .cssload-dots:nth-child(7):after {
 	transform: translateY(200%);
@@ -305,16 +304,16 @@
 		-ms-transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
-	animation: cssload-animAfter 1.15s linear infinite;
-		-o-animation: cssload-animAfter 1.15s linear infinite;
-		-ms-animation: cssload-animAfter 1.15s linear infinite;
-		-webkit-animation: cssload-animAfter 1.15s linear infinite;
-		-moz-animation: cssload-animAfter 1.15s linear infinite;
-	animation-delay: -7.25s;
-		-o-animation-delay: -7.25s;
-		-ms-animation-delay: -7.25s;
-		-webkit-animation-delay: -7.25s;
-		-moz-animation-delay: -7.25s;
+	animation: cssload-animAfter 1.9s linear infinite;
+		-o-animation: cssload-animAfter 1.9s linear infinite;
+		-ms-animation: cssload-animAfter 1.9s linear infinite;
+		-webkit-animation: cssload-animAfter 1.9s linear infinite;
+		-moz-animation: cssload-animAfter 1.9s linear infinite;
+	animation-delay: -11.97s;
+		-o-animation-delay: -11.97s;
+		-ms-animation-delay: -11.97s;
+		-webkit-animation-delay: -11.97s;
+		-moz-animation-delay: -11.97s;
 	background-color: rgb(119,119,119);
 }
 .cssload-dots:nth-child(8):before {
@@ -323,17 +322,17 @@
 		-ms-transform: translateY(-200%);
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);
-	animation: cssload-animBefore 1.15s linear infinite;
-		-o-animation: cssload-animBefore 1.15s linear infinite;
-		-ms-animation: cssload-animBefore 1.15s linear infinite;
-		-webkit-animation: cssload-animBefore 1.15s linear infinite;
-		-moz-animation: cssload-animBefore 1.15s linear infinite;
-	animation-delay: -8.28s;
-		-o-animation-delay: -8.28s;
-		-ms-animation-delay: -8.28s;
-		-webkit-animation-delay: -8.28s;
-		-moz-animation-delay: -8.28s;
-	background-color: rgb(255,0,0);
+	animation: cssload-animBefore 1.9s linear infinite;
+		-o-animation: cssload-animBefore 1.9s linear infinite;
+		-ms-animation: cssload-animBefore 1.9s linear infinite;
+		-webkit-animation: cssload-animBefore 1.9s linear infinite;
+		-moz-animation: cssload-animBefore 1.9s linear infinite;
+	animation-delay: -13.68s;
+		-o-animation-delay: -13.68s;
+		-ms-animation-delay: -13.68s;
+		-webkit-animation-delay: -13.68s;
+		-moz-animation-delay: -13.68s;
+	background-color: rgb(0,102,0);
 }
 .cssload-dots:nth-child(8):after {
 	transform: translateY(200%);
@@ -341,16 +340,16 @@
 		-ms-transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
-	animation: cssload-animAfter 1.15s linear infinite;
-		-o-animation: cssload-animAfter 1.15s linear infinite;
-		-ms-animation: cssload-animAfter 1.15s linear infinite;
-		-webkit-animation: cssload-animAfter 1.15s linear infinite;
-		-moz-animation: cssload-animAfter 1.15s linear infinite;
-	animation-delay: -8.28s;
-		-o-animation-delay: -8.28s;
-		-ms-animation-delay: -8.28s;
-		-webkit-animation-delay: -8.28s;
-		-moz-animation-delay: -8.28s;
+	animation: cssload-animAfter 1.9s linear infinite;
+		-o-animation: cssload-animAfter 1.9s linear infinite;
+		-ms-animation: cssload-animAfter 1.9s linear infinite;
+		-webkit-animation: cssload-animAfter 1.9s linear infinite;
+		-moz-animation: cssload-animAfter 1.9s linear infinite;
+	animation-delay: -13.68s;
+		-o-animation-delay: -13.68s;
+		-ms-animation-delay: -13.68s;
+		-webkit-animation-delay: -13.68s;
+		-moz-animation-delay: -13.68s;
 	background-color: rgb(119,119,119);
 }
 .cssload-dots:nth-child(9):before {
@@ -359,17 +358,17 @@
 		-ms-transform: translateY(-200%);
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);
-	animation: cssload-animBefore 1.15s linear infinite;
-		-o-animation: cssload-animBefore 1.15s linear infinite;
-		-ms-animation: cssload-animBefore 1.15s linear infinite;
-		-webkit-animation: cssload-animBefore 1.15s linear infinite;
-		-moz-animation: cssload-animBefore 1.15s linear infinite;
-	animation-delay: -9.32s;
-		-o-animation-delay: -9.32s;
-		-ms-animation-delay: -9.32s;
-		-webkit-animation-delay: -9.32s;
-		-moz-animation-delay: -9.32s;
-	background-color: #F00;
+	animation: cssload-animBefore 1.9s linear infinite;
+		-o-animation: cssload-animBefore 1.9s linear infinite;
+		-ms-animation: cssload-animBefore 1.9s linear infinite;
+		-webkit-animation: cssload-animBefore 1.9s linear infinite;
+		-moz-animation: cssload-animBefore 1.9s linear infinite;
+	animation-delay: -15.39s;
+		-o-animation-delay: -15.39s;
+		-ms-animation-delay: -15.39s;
+		-webkit-animation-delay: -15.39s;
+		-moz-animation-delay: -15.39s;
+	background-color: rgb(0,102,0);
 }
 .cssload-dots:nth-child(9):after {
 	transform: translateY(200%);
@@ -377,16 +376,16 @@
 		-ms-transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
-	animation: cssload-animAfter 1.15s linear infinite;
-		-o-animation: cssload-animAfter 1.15s linear infinite;
-		-ms-animation: cssload-animAfter 1.15s linear infinite;
-		-webkit-animation: cssload-animAfter 1.15s linear infinite;
-		-moz-animation: cssload-animAfter 1.15s linear infinite;
-	animation-delay: -9.32s;
-		-o-animation-delay: -9.32s;
-		-ms-animation-delay: -9.32s;
-		-webkit-animation-delay: -9.32s;
-		-moz-animation-delay: -9.32s;
+	animation: cssload-animAfter 1.9s linear infinite;
+		-o-animation: cssload-animAfter 1.9s linear infinite;
+		-ms-animation: cssload-animAfter 1.9s linear infinite;
+		-webkit-animation: cssload-animAfter 1.9s linear infinite;
+		-moz-animation: cssload-animAfter 1.9s linear infinite;
+	animation-delay: -15.39s;
+		-o-animation-delay: -15.39s;
+		-ms-animation-delay: -15.39s;
+		-webkit-animation-delay: -15.39s;
+		-moz-animation-delay: -15.39s;
 	background-color: #777;
 }
 .cssload-dots:nth-child(10):before {
@@ -395,17 +394,17 @@
 		-ms-transform: translateY(-200%);
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);
-	animation: cssload-animBefore 1.15s linear infinite;
-		-o-animation: cssload-animBefore 1.15s linear infinite;
-		-ms-animation: cssload-animBefore 1.15s linear infinite;
-		-webkit-animation: cssload-animBefore 1.15s linear infinite;
-		-moz-animation: cssload-animBefore 1.15s linear infinite;
-	animation-delay: -10.35s;
-		-o-animation-delay: -10.35s;
-		-ms-animation-delay: -10.35s;
-		-webkit-animation-delay: -10.35s;
-		-moz-animation-delay: -10.35s;
-	background-color: #F00;
+	animation: cssload-animBefore 1.9s linear infinite;
+		-o-animation: cssload-animBefore 1.9s linear infinite;
+		-ms-animation: cssload-animBefore 1.9s linear infinite;
+		-webkit-animation: cssload-animBefore 1.9s linear infinite;
+		-moz-animation: cssload-animBefore 1.9s linear infinite;
+	animation-delay: -17.1s;
+		-o-animation-delay: -17.1s;
+		-ms-animation-delay: -17.1s;
+		-webkit-animation-delay: -17.1s;
+		-moz-animation-delay: -17.1s;
+	background-color: rgb(0,102,0);
 }
 .cssload-dots:nth-child(10):after {
 	transform: translateY(200%);
@@ -413,16 +412,16 @@
 		-ms-transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
-	animation: cssload-animAfter 1.15s linear infinite;
-		-o-animation: cssload-animAfter 1.15s linear infinite;
-		-ms-animation: cssload-animAfter 1.15s linear infinite;
-		-webkit-animation: cssload-animAfter 1.15s linear infinite;
-		-moz-animation: cssload-animAfter 1.15s linear infinite;
-	animation-delay: -10.35s;
-		-o-animation-delay: -10.35s;
-		-ms-animation-delay: -10.35s;
-		-webkit-animation-delay: -10.35s;
-		-moz-animation-delay: -10.35s;
+	animation: cssload-animAfter 1.9s linear infinite;
+		-o-animation: cssload-animAfter 1.9s linear infinite;
+		-ms-animation: cssload-animAfter 1.9s linear infinite;
+		-webkit-animation: cssload-animAfter 1.9s linear infinite;
+		-moz-animation: cssload-animAfter 1.9s linear infinite;
+	animation-delay: -17.1s;
+		-o-animation-delay: -17.1s;
+		-ms-animation-delay: -17.1s;
+		-webkit-animation-delay: -17.1s;
+		-moz-animation-delay: -17.1s;
 	background-color: #777;
 }
 
