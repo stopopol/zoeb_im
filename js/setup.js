@@ -51,7 +51,12 @@ function check_ro_status() {
 			
 			document.getElementById("content_container").innerHTML = "<h3>Status Report - Raumobjekte</h3><small class='text-muted'>This report is automatically generated based on all tables containing an 'Akronym' column</small>";
 			if (total_issues > 0) {
-				document.getElementById("content_container").innerHTML += "<br><br><p style='color:red;'>Oh no! There's a total of " + total_issues + " issues :(</p>";
+				if (total_issues == 1) {
+					document.getElementById("content_container").innerHTML += "<br><br><p style='color:orange;'>You're almost there. 1 issue is left.</p>";
+				}
+				else {
+					document.getElementById("content_container").innerHTML += "<br><br><p style='color:red;'>Oh no! There's a total of " + total_issues + " issues :(</p>";
+				}
 			}
 			else {
 				document.getElementById("content_container").innerHTML += "<p style='color:green;'>Looks good. No issues were found :)</p>";
