@@ -14,25 +14,14 @@ while ($row = pg_fetch_row($result)) {
   array_push($query_results,$row[0]);
 }
 
-$RO_number = "Number of ROs: " . count($query_results);
-
 $result_no_dupes = array_unique($query_results);
 $count_no_dupes = count($query_results);
 
 // get number of duplicates
 $duplicates_count =  $count_no_dupes - count($result_no_dupes);
-$duplicates_message = "Number of duplicates: " . $duplicates_count;
 
-$report_summary = [];
-
-array_push($report_summary, $RO_number);
-array_push($report_summary, $duplicates_message);
-
-//get values of duplicates
-if ($duplicates_count > 0) {
-	$dupes_arr = array_unique(array_diff_assoc($query_results, array_unique($query_results)));
-	array_push($report_summary, $dupes_arr);
-}
+// get values of duplicates
+$dupes_arr = array_unique(array_diff_assoc($query_results, array_unique($query_results)));
 
 // search for ROs in layers
 // get list of all layers containing ROs
@@ -42,42 +31,47 @@ while ($row = pg_fetch_row($layers_results)) {
   array_push($layer_names,$row[0]);
 }
 
-
-// loop through ROs
-
+// get all ROs in every layer
+// build query string
 $query_string = "";
-
 foreach ($layer_names as $layer ) {
 	$query_string = $query_string . 'SELECT "Akronym" FROM "' . $layer . '" UNION ';
 }
-
 $query_string = substr($query_string, 0, -7);
 $query_string = $query_string . ";";
 
 $ROs_results = pg_query($conn, $query_string);
 
 $list_ros_layers = [];
-
 while ($row = pg_fetch_row($ROs_results)) {
   array_push($list_ros_layers,$row[0]);
 }
 
-array_push($report_summary, "Following ROs are not in any layer: ");
+// Check for all ROs that are not in any of the layers
 
 $redundant_ro_list = [];
-// iterate through all ROs
-foreach ($query_results as $ro ) {
+foreach ($query_results as $ro) {
 	if (!in_array($ro, $list_ros_layers)) {
-		//$RO_redundant_message = "Following RO is not in any layer: " . $ro;
 		array_push($redundant_ro_list,$ro);
 	}
 }
 
-array_push($report_summary, $redundant_ro_list);
+// Check for all ROs that are in any layer, but not in the main table
+$ROs_not_in_maintable = [];
+foreach ($list_ros_layers as $ro) {
+	if (!in_array($ro, $query_results)) {
+		array_push($ROs_not_in_maintable,$ro);
+	}
+}
+
+$report_summary = [];
+
+$report_summary["number_ros"] 				= count($query_results);
+$report_summary["number_duplicates"] 		= $duplicates_count; 
+$report_summary["list_duplicates"] 			= array_values($dupes_arr);
+$report_summary["ros_not_in_layers"] 		= $redundant_ro_list;
+$report_summary["ros_not_in_main_table"] 	= $ROs_not_in_maintable;
 
 echo json_encode($report_summary);
 
 pg_close($dbconn); 
-
-
-?>
