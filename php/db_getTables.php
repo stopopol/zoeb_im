@@ -16,6 +16,3 @@ while ($row = pg_fetch_row($result)) {
 echo json_encode($array);
 
 pg_close($dbconn); 
-
-
-?>
