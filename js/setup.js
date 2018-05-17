@@ -82,14 +82,14 @@ function check_ro_status() {
 			else {
 				document.getElementById("content_container").innerHTML += "<p style='color:green;'>Looks good. No issues were found :)</p>";
 			}
-			document.getElementById("content_container").innerHTML += '<table class="table"> <thead><tr> <th scope="col"></th> <th scope="col">Issue count</th> <th scope="col">"Akronym" of each RO</th> <th scope="col">Status</th></tr> </thead> <tbody><tr> <th scope="row">Duplicates in the main table</th> <td>' + number_of_duplicates + '</td> <td>' + JSON.stringify(list_of_duplicates, null, 2) + '</td> <td>' + status_duplicate + '</td></tr><tr> <th scope="row">List of ROs that are not in any layer, but in the main table</th> <td>'+ number_ros_not_in_layers +'</td> <td>'+ JSON.stringify(ros_not_in_layers, null, 2) + '</td> <td>'+ status_ros_not_in_layers + '</td></tr><tr> <th scope="row">List of ROs that are not in the main table, but were found in a layer</th> <td>'+ number_ros_not_in_main_table + '</td> <td>'+ JSON.stringify(ros_not_in_main_table, null, 2) + '</td> <td>'+ status_ros_not_in_main_table + '</td></tr> </tbody></table>';
+			document.getElementById("content_container").innerHTML += '<table class="table"> <thead><tr> <th scope="col">Issue Type</th> <th scope="col">Issue count</th> <th scope="col">"Akronym" of each RO</th> <th scope="col">Status</th></tr> </thead> <tbody><tr> <th scope="row">Duplicates in the main table</th> <td>' + number_of_duplicates + '</td> <td>' + JSON.stringify(list_of_duplicates, null, 2) + '</td> <td>' + status_duplicate + '</td></tr><tr> <th scope="row">List of ROs that are not in any layer, but in the main table</th> <td>'+ number_ros_not_in_layers +'</td> <td>'+ JSON.stringify(ros_not_in_layers, null, 2) + '</td> <td>'+ status_ros_not_in_layers + '</td></tr><tr> <th scope="row">List of ROs that are not in the main table, but were found in a layer</th> <td>'+ number_ros_not_in_main_table + '</td> <td>'+ JSON.stringify(ros_not_in_main_table, null, 2) + '</td> <td>'+ status_ros_not_in_main_table + '</td></tr> </tbody></table>';
 				/*
 				document.getElementById("content_container").innerHTML += '
 				<table class="table">
 				  <thead>
 					<tr>
-					  <th scope="col"></th>
-					  <th scope="col">Issue count</th>
+					  <th scope="col">Issue Type</th>
+					  <th scope="col">Issue Count</th>
 					  <th scope="col">"Akronym" of each RO</th>
 					  <th scope="col">Status</th>
 					</tr>
