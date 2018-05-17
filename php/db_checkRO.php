@@ -25,7 +25,7 @@ $dupes_arr = array_unique(array_diff_assoc($query_results, array_unique($query_r
 
 // search for ROs in layers
 // get list of all layers containing ROs
-$layers_results = pg_query($conn, "select table_name from INFORMATION_SCHEMA.COLUMNS where COLUMN_NAME like '%Akronym%' order by TABLE_NAME");
+$layers_results = pg_query($conn, "select table_name from INFORMATION_SCHEMA.COLUMNS where COLUMN_NAME LIKE 'Akronym' order by TABLE_NAME");
 $layer_names = [];
 while ($row = pg_fetch_row($layers_results)) {
   array_push($layer_names,$row[0]);
