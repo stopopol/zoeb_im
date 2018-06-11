@@ -42,12 +42,11 @@ function check_ro_status() {
 		
 			var number_of_duplicates = json_response["number_duplicates"];
 			var list_of_duplicates = json_response["list_duplicates"];
-			var ros_not_in_layers = json_response["ros_not_in_layers"];
-			var ros_not_in_main_table = json_response["ros_not_in_main_table"];
-			
-			var number_ros_not_in_layers = Object.keys(ros_not_in_layers).length;
+		
+			var ros_not_in_main_table = json_response["ros_not_in_main_table"];	
+			console.log(ros_not_in_main_table);
 			var number_ros_not_in_main_table = Object.keys(ros_not_in_main_table).length;
-			var total_issues = number_of_duplicates + number_ros_not_in_layers  + number_ros_not_in_main_table;
+			var total_issues = number_of_duplicates + number_ros_not_in_main_table;
 			
 			if (number_of_duplicates == 0) {
 				var status_duplicate = '<p style="color:green; text-align: center;">✓</p>';
@@ -55,13 +54,7 @@ function check_ro_status() {
 			else {
 				var status_duplicate = '<p style="color:red; text-align: center;">✕</p>';
 			}
-			if (number_ros_not_in_layers == 0) {
-				var status_ros_not_in_layers = '<p style="color:green; text-align: center;">✓</p>';
-			}
-			else {
-				var status_ros_not_in_layers = '<p style="color:red; text-align: center;">✕</p>';
-			}
-			
+	
 			if (number_ros_not_in_main_table == 0) {
 				var status_ros_not_in_main_table = '<p style="color:green; text-align: center;">✓</p>';
 			}
@@ -82,7 +75,7 @@ function check_ro_status() {
 			else {
 				document.getElementById("content_container").innerHTML += "<p style='color:green;'>Looks good. No issues were found :)</p>";
 			}
-			document.getElementById("content_container").innerHTML += '<table class="table"> <thead><tr> <th scope="col">Issue Type</th> <th scope="col">Issue count</th> <th scope="col">"Akronym" of each RO</th> <th scope="col">Status</th></tr> </thead> <tbody><tr> <th scope="row">Duplicates in the main table</th> <td>' + number_of_duplicates + '</td> <td>' + JSON.stringify(list_of_duplicates, null, 2) + '</td> <td>' + status_duplicate + '</td></tr><tr> <th scope="row">List of ROs that are not in any layer, but in the main table</th> <td>'+ number_ros_not_in_layers +'</td> <td>'+ JSON.stringify(ros_not_in_layers, null, 2) + '</td> <td>'+ status_ros_not_in_layers + '</td></tr><tr> <th scope="row">List of ROs that are not in the main table, but were found in a layer</th> <td>'+ number_ros_not_in_main_table + '</td> <td>'+ JSON.stringify(ros_not_in_main_table, null, 2) + '</td> <td>'+ status_ros_not_in_main_table + '</td></tr> </tbody></table>';
+			document.getElementById("content_container").innerHTML += '<table class="table"> <thead><tr> <th scope="col">Issue Type</th> <th scope="col">Issue count</th> <th scope="col">"Akronym" of each RO</th> <th scope="col">Status</th></tr> </thead> <tbody><tr> <th scope="row">Duplicates in the main table</th> <td>' + number_of_duplicates + '</td> <td>' + JSON.stringify(list_of_duplicates, null, 2) + '</td> <td>' + status_duplicate + '</td></tr><tr> <th scope="row">List of ROs that are not in the main table, but were found in a layer</th> <td>'+ number_ros_not_in_main_table + '</td> <td>'+ JSON.stringify(ros_not_in_main_table, null, 2) + '</td> <td>'+ status_ros_not_in_main_table + '</td></tr> </tbody></table>';
 				/*
 				document.getElementById("content_container").innerHTML += '
 				<table class="table">
