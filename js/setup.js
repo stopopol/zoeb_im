@@ -43,16 +43,18 @@ function check_ro_status() {
 			var number_of_duplicates = json_response["number_duplicates"];
 			var list_of_duplicates = json_response["list_duplicates"];
 		
-			var ros_not_in_main_table = json_response["ros_not_in_main_table"];	
-			var number_ros_not_in_main_table = Object.keys(ros_not_in_main_table).length;
-			var total_issues = number_of_duplicates + number_ros_not_in_main_table;
-			
-			if (_.isEmpty(list_of_duplicates) == false) {
-				JSON.stringify(list_of_duplicates, null, 2)
-			} 
-			else {
+			if (_.isEmpty(list_of_duplicates) == true) {
 				list_of_duplicates = "";
-			}
+			} 
+		
+			var ros_not_in_main_table = json_response["ros_not_in_main_table"];
+			var number_ros_not_in_main_table = Object.keys(ros_not_in_main_table).length;
+			
+			if (_.isEmpty(ros_not_in_main_table) == true) {
+				ros_not_in_main_table = "";
+			} 
+		
+			var total_issues = number_of_duplicates + number_ros_not_in_main_table;
 			
 			if (number_of_duplicates == 0) {
 				var status_duplicate = '<p style="color:green; text-align: center;">✓</p>';
