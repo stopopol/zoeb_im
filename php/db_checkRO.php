@@ -35,33 +35,41 @@ while ($row = pg_fetch_row($layers_results)) {
 // build query string
 $query_string = "";
 foreach ($layer_names as $layer ) {
-	$query_string = $query_string . 'SELECT "Akronym" FROM "' . $layer . '" UNION ';
+	$query_string = $query_string . 'SELECT "Akronym",\'' . $layer . '\' AS layer_name  FROM "' . $layer . '" UNION ';
 }
 $query_string = substr($query_string, 0, -7);
 $query_string = $query_string . ";";
 
 $ROs_results = pg_query($conn, $query_string);
 
+// contains all ROs from all layers
 $list_ros_layers = [];
+$lookup_array = [];
 while ($row = pg_fetch_row($ROs_results)) {
   array_push($list_ros_layers,$row[0]);
+  array_push($lookup_array,$row[1]);
 }
 
 // Check for all ROs that are in any layer, but not in the main table
 $ROs_not_in_maintable = [];
 foreach ($list_ros_layers as $ro) {
-	if (!in_array($ro, $query_results)) {
-		array_push($ROs_not_in_maintable,$ro);
+	if (!in_array($ro, $query_results, true)) {
+		$index_ro = array_search($ro,$list_ros_layers);
+		array_push($ROs_not_in_maintable,array($ro, $lookup_array[$index_ro]));
 	}
 }
 
 $report_summary = [];
 
-$report_summary["number_ros"] 				= count($query_results);
+$report_summary["number_ros"] 			= count($query_results);
 $report_summary["number_duplicates"] 		= $duplicates_count; 
-$report_summary["list_duplicates"] 			= array_values($dupes_arr);
+$report_summary["list_duplicates"] 		= array_values($dupes_arr);
 $report_summary["ros_not_in_main_table"] 	= $ROs_not_in_maintable;
+
 
 echo json_encode($report_summary);
 
 pg_close($dbconn); 
+
+
+
